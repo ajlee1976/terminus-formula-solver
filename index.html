@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" class="min-h-full h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="min-h-full h-auto bg-slate-500">
+    <script src="./terminus.js"></script>
+    <div class="w-full min-h-full h-full">
+      <div class="flex justify-center gap-4 flex-col md:flex-row">
+        <div class="w-96 m-auto md:m-0">
+          <div>
+            <h1 class="text-center font-bold text-lg">
+              Select X, Y and Z Values
+            </h1>
+          </div>
+          <div class="flex flex-col gap-4 m-auto">
+            <div class="flex gap-4 w-full justify-between">
+              <div class="w-5">0</div>
+              <div class="flex-grow border-black border w-32"></div>
+              <div class="flex-grow border-black border w-32"></div>
+              <div
+                class="flex-grow border-black border w-32"
+                onclick="select(0, this.lastElementChild.src)"
+              >
+                <img
+                  src="./venns/term1.png"
+                  alt=""
+                  width="100px"
+                  height="100px"
+                  class="m-auto"
+                />
+              </div>
+            </div>
+            <div class="flex gap-4 w-full justify-between">
+              <div class="w-5 text-center">1</div>
+              <div class="flex-grow border-black border w-32"></div>
+              <div
+                class="flex-grow border-black border w-32"
+                onclick="select(11, this.lastElementChild.src)"
+              >
+                <img
+                  src="./venns/term3.png"
+                  alt=""
+                  width="100px"
+                  height="100px"
+                  class="m-auto"
+                />
+              </div>
+              <div
+                class="flex-grow border-black border w-32"
+                onclick="select(10, this.lastElementChild.src)"
+              >
+                <img
+                  src="./venns/term2.png"
+                  alt=""
+                  width="100px"
+                  height="100px"
+                  class="m-auto"
+                />
+              </div>
+            </div>
+            <div class="flex gap-4 w-full justify-between">
+              <div class="w-5 text-center">2</div>
+              <div
+                class="flex-grow border-black border w-32"
+                onclick="select(22, this.lastElementChild.src)"
+              >
+                <img
+                  src="./venns/term4.png"
+                  alt=""
+                  width="100px"
+                  height="100px"
+                  class="m-auto"
+                />
+              </div>
+              <div
+                class="flex-grow border-black border w-32"
+                onclick="select(21, this.lastElementChild.src)"
+              >
+                <img
+                  src="./venns/term5.png"
+                  alt=""
+                  width="100px"
+                  height="100px"
+                  class="m-auto"
+                />
+              </div>
+              <div
+                class="flex-grow border-black border w-32"
+                onclick="select(20, this.lastElementChild.src)"
+              >
+                <img
+                  src="./venns/term6.png"
+                  alt=""
+                  width="100px"
+                  height="100px"
+                  class="m-auto"
+                />
+              </div>
+            </div>
+            <div class="flex gap-4 w-full justify-between">
+              <div class="w-5"></div>
+              <div class="flex-grow w-32 text-center">2</div>
+              <div class="flex-grow w-32 text-center">1</div>
+              <div class="flex-grow w-32 text-center">0</div>
+            </div>
+          </div>
+        </div>
+        <div class="w-96 m-auto md:m-0">
+          <div class="text-center font-bold text-lg">Your Selections</div>
+          <div class="flex flex-col w-2/3 m-auto gap-4">
+            <div class="flex flex-row justify-evenly">
+              <div class="w-1/2 text-center m-auto text-xl font-bold">X</div>
+              <div class="w-1/2">
+                <img
+                  id="x_img"
+                  src=""
+                  alt="Not Selected"
+                  height="100px"
+                  width="100px"
+                  class="m-auto text-center"
+                />
+              </div>
+            </div>
+            <div class="flex flex-row justify-evenly">
+              <div class="w-1/2 text-center m-auto text-xl font-bold">Y</div>
+              <div class="w-1/2">
+                <img
+                  id="y_img"
+                  src=""
+                  alt="Not Selected"
+                  height="100px"
+                  width="100px"
+                  class="m-auto"
+                />
+              </div>
+            </div>
+            <div class="flex flex-row justify-evenly">
+              <div class="w-1/2 text-center m-auto text-xl font-bold">Z</div>
+              <div class="w-1/2">
+                <img
+                  id="z_img"
+                  src=""
+                  alt="Not Selected"
+                  height="100px"
+                  width="100px"
+                  class="m-auto"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="m-auto w-60 flex flex-row gap-12">
+        <button
+          class="justify-center rounded py-2 px-3 typically:no-underline; bg-green-600 hover:bg-green-700 active:bg-green-800 w-32 text-center transition-all disabled:bg-green-300 disabled:text-grey-300 disabled:cursor-not-allowed"
+          onclick="console.log(solve())"
+          id="calc_button"
+          disabled
+        >
+          Calculate
+        </button>
+        <button
+          class="justify-center rounded py-2 px-3 typically:no-underline; bg-red-600 hover:bg-red-700 active:bg-red-800 w-32 text-center transition-all"
+          onclick="clearSelections()"
+        >
+          Clear
+        </button>
+      </div>
+
+      <div
+        class="hidden m-auto rounded p-2 flex-col bg-yellow-200 text-yellow-700 w-60 mt-4"
+        id="result"
+      ></div>
+    </div>
+  </body>
+</html>
